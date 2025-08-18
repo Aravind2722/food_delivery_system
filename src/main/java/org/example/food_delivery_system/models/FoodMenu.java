@@ -1,9 +1,6 @@
 package org.example.food_delivery_system.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 public class FoodMenu extends BaseModel {
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn
     private Restaurant restaurant;
 
