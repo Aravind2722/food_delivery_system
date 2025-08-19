@@ -17,15 +17,19 @@ public class Restaurant extends BaseModel {
     @OneToOne
     @JoinColumn
     private User admin;
+    private String name;
     private String description;
+    private String phoneNumber;
+    private String email;
     private double rating;
     @Enumerated(EnumType.STRING)
     @ElementCollection
     private List<Cuisine> cuisines;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn
     private Address address;
     private String image;
-    @OneToOne(mappedBy = "restaurant")
+    @OneToOne(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
     private FoodMenu foodMenu;
 }

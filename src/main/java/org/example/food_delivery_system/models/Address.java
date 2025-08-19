@@ -1,6 +1,7 @@
 package org.example.food_delivery_system.models;
 
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
@@ -19,6 +20,6 @@ public class Address extends BaseModel {
     private String state;
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Location location;
 }
