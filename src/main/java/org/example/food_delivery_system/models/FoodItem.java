@@ -1,9 +1,7 @@
 package org.example.food_delivery_system.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,4 +16,7 @@ public class FoodItem extends BaseModel {
     private double rating;
     private double price;
     private String image;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
+    private FoodMenu foodMenu;
 }

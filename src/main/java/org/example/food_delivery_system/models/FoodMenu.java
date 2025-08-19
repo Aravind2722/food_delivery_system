@@ -3,6 +3,7 @@ package org.example.food_delivery_system.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
 
 import java.util.List;
 
@@ -14,6 +15,6 @@ public class FoodMenu extends BaseModel {
     @JoinColumn
     private Restaurant restaurant;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     private List<FoodItem> foodItems;
 }
