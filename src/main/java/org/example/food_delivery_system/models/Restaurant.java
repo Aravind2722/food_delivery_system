@@ -10,11 +10,14 @@ import java.util.List;
 @Setter
 @Entity
 public class Restaurant extends BaseModel {
-    private String name;
+//    private String name;
+//    private String phoneNumber;
+//    private String password;
+//    private String email;
+    @OneToOne
+    @JoinColumn
+    private User admin;
     private String description;
-    private String phoneNumber;
-    private String password; //check if correct
-    private String email;
     private double rating;
     @Enumerated(EnumType.STRING)
     @ElementCollection
