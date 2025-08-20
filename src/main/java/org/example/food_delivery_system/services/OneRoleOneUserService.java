@@ -2,6 +2,7 @@ package org.example.food_delivery_system.services;
 
 import org.example.food_delivery_system.exceptions.EmailAlreadyExistsException;
 import org.example.food_delivery_system.exceptions.PhoneNumberAlreadyExistsException;
+import org.example.food_delivery_system.models.Cart;
 import org.example.food_delivery_system.models.Role;
 import org.example.food_delivery_system.models.User;
 import org.example.food_delivery_system.repositories.UserRepository;

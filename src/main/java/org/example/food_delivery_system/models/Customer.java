@@ -16,6 +16,6 @@ public class Customer extends BaseModel {
     @OneToOne
     @JoinColumn
     private User user;
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Address> addresses;
 }

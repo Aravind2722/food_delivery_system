@@ -15,6 +15,6 @@ public class FoodMenu extends BaseModel {
     @JoinColumn
     private Restaurant restaurant;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "foodMenu", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FoodItem> foodItems;
 }
