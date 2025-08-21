@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @ExceptionHandler({PhoneNumberAlreadyExistsException.class, EmailAlreadyExistsException.class})
-    public ResponseEntity<String> handle(Exception exception) {
+    public ResponseEntity<String> handlePhoneNumberAlreadyExistsExceptionAndEmailAlreadyExistsException(Exception exception) {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.CONFLICT);
     }
 }

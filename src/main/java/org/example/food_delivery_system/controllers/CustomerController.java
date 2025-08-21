@@ -28,7 +28,7 @@ public class CustomerController {
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
     @ExceptionHandler({PhoneNumberAlreadyExistsException.class, EmailAlreadyExistsException.class})
-    public ResponseEntity<String> handle(Exception exception) {
+    public ResponseEntity<String> handlePhoneNumberAlreadyExistsExceptionAndEmailAlreadyExistsException(Exception exception) {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.CONFLICT);
     }
 }

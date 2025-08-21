@@ -1,15 +1,14 @@
 package org.example.food_delivery_system.repositories;
 
+import org.example.food_delivery_system.models.Cart;
 import org.example.food_delivery_system.models.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Optional;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
-
-    Optional<Customer> findById(long id);
-    Customer save(Customer customer);
+public interface CartRepository extends JpaRepository<Cart, Long> {
+    Cart save(Cart cart);
+    Optional<Cart> findByCustomer(Customer customer);
 }

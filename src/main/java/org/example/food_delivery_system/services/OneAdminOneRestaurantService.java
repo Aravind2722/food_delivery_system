@@ -16,7 +16,7 @@ public class OneAdminOneRestaurantService implements RestaurantService {
     private final UserService userService;
 
     @Autowired
-    public OneAdminOneRestaurantService(RestaurantRepository restaurantRepository, OneRoleOneUserService userService) {
+    public OneAdminOneRestaurantService(RestaurantRepository restaurantRepository, UserService userService) {
         this.restaurantRepository = restaurantRepository;
         this.userService = userService;
     }
